@@ -8,14 +8,14 @@ const signupFormHandler = async (event) => {
     console.group(name,email,password);
   
     if (name && email && password) {
-      const response = await fetch('/api/users/signup', {
+      const response = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

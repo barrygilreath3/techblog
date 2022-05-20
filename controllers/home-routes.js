@@ -2,22 +2,7 @@ const router = require('express').Router();
 const {Post, Comment, User} = require('../models');
 
 // Everything will be a get route, all others need to be in api
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn){
-        res.redirect('/')
-        return
-    }
-    res.render('signup');
-})
-
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn){
-        res.redirect('/profile')
-        return
-    }
-    res.render('login');
-})
-
+// Home Page - Working
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -29,6 +14,25 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Signup - Working
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn){
+        res.redirect('/')
+        return
+    }
+    res.render('signup');
+})
+
+// Login - Working
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn){
+        res.redirect('/profile')
+        return
+    }
+    res.render('login');
+})
+
+// Post Id - ??
 router.get('/post/:id'), async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
