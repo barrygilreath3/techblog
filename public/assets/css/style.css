@@ -1,0 +1,38 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: rgb(57, 22, 17);
+    height: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    list-style: none;
+}
+
+ul li {
+    margin-inline: 20px;
+}
+
+ul a{ 
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+    padding: 100px;
+    text-align: center;
+}
+
+p {
+    padding: 100px;
+}

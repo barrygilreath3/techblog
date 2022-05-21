@@ -4,18 +4,21 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) =>  {
     try {
-        const post = await Post.findAll({
+        const content = await Post.findAll({
             where: {
                 userId: req.session.userId,
             },
-        })
-        console.log(post);
+        });
 
-    } catch (error) {
-        
+        const posts = content.map((post) => post.get({ plain: true }));
+
+        res.render('dashboardroutes', {
+          posts
+        });
+    
+      } catch (err) {
+        res.redirect('login');
     }
-
-    res.json(post);
 });
 
 router.get('/new', async (req, res) => {
