@@ -50,12 +50,6 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif)
-
 ## Links
 ### GitHub
 https://github.com/barrygilreath3/techblog

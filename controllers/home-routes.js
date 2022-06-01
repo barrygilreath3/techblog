@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const postData = await Post.findAll({
             include:[User]
         });
-        res.render('home', postData) //Replace with a home.handlebars page ('home')
+        res.render('home', postData)//Replace with a home.handlebars page ('home')
     } catch (error) {
         res.json(error)
     }
